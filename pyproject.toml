@@ -1,0 +1,33 @@
+[project]
+name = "online-shop"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "MaksimTishchenko", email = "tmaxim.1997@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.poetry]
+packages = [
+    { include = "config" },
+    { include = "products" }
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+addopts = "-v"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# === Зависимости проекта ===
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.2.3"
+pytest = "^8.4.1"
+pytest-django = "^4.11.1"
+celery = "^5.4.0"
+redis = "^4.6.0"
+eventlet = "^0.40.1"
